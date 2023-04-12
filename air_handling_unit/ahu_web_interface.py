@@ -8,9 +8,29 @@ import streamlit as st
 import faults
 import reports
 
+st.set_page_config(page_title="G36 AHU Fault Condition Analysis")
 st.title("G36 Fault Condition Analysis")
-st.subheader("Select a rule to check and upload a CSV file to run the analysis")
+col1, col2 = st.columns(2)
+col1.markdown("""
+## Instructions:
+1. Select a rule to check from the dropdown menu
+2. Upload a CSV file containing the data to be analysed with columns for each of the required input columns displayed
+3. Select the columns from the CSV file to be used for each of the inputs
+4. Enter the values for each of the parameters
+5. Click the "Run Analysis" button to run the analysis
+6. Click the "Download Results" button to download the results
+""")
 
+
+col2.markdown("""
+## Reports:
+1. Enter a name for the report
+2. Select the columns from the CSV file to be used for each of the additional report inputs displayed
+3. Click the "Run Report" button to run the report
+4. Click the "Download Report" button to download the report
+""")
+
+st.subheader("Select a rule to check and upload a CSV file to run the analysis")
 fault_map = {x[0]: x[1] for x in inspect.getmembers(faults, inspect.isclass) if x[0].startswith("FaultCondition")}
 report_map = {x[0]: x[1] for x in inspect.getmembers(reports, inspect.isclass)}
 
@@ -22,7 +42,20 @@ input_map = {
 }
 
 rule_to_check = st.selectbox("What rule would you like to check?", sorted(fault_map.keys()))
+
 inputs = inspect.signature(fault_map[rule_to_check])
+if rule_to_check:
+    col1, col2 = st.columns(2)
+    columns_markdown = "\n".join((f" - {f}" for f in inputs.parameters if f.endswith("_col")))
+    parameters_markdown = "\n".join((f" - {f}" for f in inputs.parameters if not f.endswith("_col")))
+    st.markdown(f"### Inputs for {rule_to_check}")
+    col1.markdown(f"""
+#### Columns: 
+{columns_markdown}
+    """)
+    col2.markdown(f"""
+#### Parameters:
+{parameters_markdown}""")
 samples = st.file_uploader("Upload a CSV file", type="csv")
 
 column_mappings = {}
@@ -77,3 +110,8 @@ if samples is not None:
                 "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
             )
         )
+
+st.markdown("""
+### Attribution:
+Based on work by Ben Bartling, to contribute see [the GitHub repository](https://github.com/bbartling/open-fdd)
+""")
