@@ -3,6 +3,7 @@ import os
 import time
 from io import BytesIO
 import numpy as np
+import pathlib
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -131,7 +132,7 @@ class FaultCodeOneReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc1_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc1_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -418,7 +419,7 @@ class FaultCodeTwoReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc2_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc2_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -696,7 +697,7 @@ class FaultCodeThreeReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc3_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc3_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -1004,7 +1005,7 @@ class FaultCodeFourReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc4_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc4_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -1292,7 +1293,7 @@ class FaultCodeFiveReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc5_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc5_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -1569,7 +1570,7 @@ class FaultCodeSixReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc6_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc6_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -1841,7 +1842,7 @@ class FaultCodeSevenReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc7_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc7_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -2100,7 +2101,7 @@ class FaultCodeEightReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc8_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc8_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -2352,7 +2353,7 @@ class FaultCodeNineReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc9_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc9_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -2615,7 +2616,7 @@ class FaultCodeTenReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc10_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc10_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -2877,7 +2878,7 @@ class FaultCodeElevenReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc11_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc11_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -3140,7 +3141,7 @@ class FaultCodeTwelveReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc12_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc12_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
@@ -3404,7 +3405,7 @@ class FaultCodeThirteenReport:
         )
 
         document.add_picture(
-            os.path.join(os.path.curdir, "images", "fc13_definition.png"),
+            os.path.join(pathlib.Path(__file__).parent.resolve(), "images", "fc13_definition.png"),
             width=Inches(6),
         )
         document.add_heading("Dataset Plot", level=2)
